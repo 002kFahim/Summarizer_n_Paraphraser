@@ -1,11 +1,12 @@
 import Navbar from "@/components/Navbar";
-import Summary from "./summary";
 
-export default function Home() {
+const Paraphrase = () => {
   return (
     <div>
       <Navbar />
-      <Summary />
+      <h1>hi</h1>
     </div>
   );
-}
+};
+
+export default Paraphrase;

@@ -3,6 +3,7 @@ import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import { BsChevronDown } from "react-icons/bs";
 import AccountMenu from "./AccountMenu";
+import Link from "next/link";
 
 const TOP_OFFSET = 66;
 
@@ -48,7 +49,7 @@ const Navbar = () => {
           ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}`}
       >
         <div className="h-4 lg:h-7 font-semibold text-xl text-white">
-          LearnIt
+          <Link href="/">LearnIt</Link>
         </div>
         <div
           className="
@@ -58,8 +59,12 @@ const Navbar = () => {
             hidden
             lg:flex"
         >
-          <NavbarItem label="Summary" />
-          <NavbarItem label="Paraphrase" />
+          <Link href="/summary">
+            <NavbarItem label="Summary" />
+          </Link>
+          <Link href="/paraphrase">
+            <NavbarItem label="Paraphrase" />
+          </Link>
         </div>
         <div
           onClick={toggleMobileMenu}
