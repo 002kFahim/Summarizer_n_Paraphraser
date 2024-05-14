@@ -1,4 +1,3 @@
-// components/InputOutputFields.tsx
 import React, { useState } from "react";
 
 interface InputOutputFieldsProps {
@@ -17,21 +16,25 @@ const InputOutputFields: React.FC<InputOutputFieldsProps> = ({
   };
 
   return (
-    <div className="mt-8 flex flex-col items-center">
+    <div className="mt-8 flex">
       {/* Input Field */}
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        placeholder={placeholder}
-        className="w-80 md:w-96 px-4 py-2 border border-gray-300 rounded-lg mb-4"
-      />
-      {/* Divider */}
-      <div className="border-t border-gray-300 w-80 md:w-96 mb-4"></div>
+      <div className="w-1/2 pr-2">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder={placeholder}
+          className="w-full h-40 px-4 py-2 border border-gray-300 rounded-lg"
+        />
+      </div>
+      {/* Divider Line */}
+      <div className="w-px bg-gray-300" />
       {/* Output Field */}
-      <div className="w-80 md:w-96 bg-gray-100 rounded-lg p-4">
-        <span>Output:</span>
-        <div className="overflow-y-auto max-h-40">{outputValue}</div>
+      <div className="w-1/2 pl-2">
+        <div className="bg-gray-100 rounded-lg p-4 h-40">
+          <span>Output:</span>
+          <div className="overflow-y-auto max-h-full">{outputValue}</div>
+        </div>
       </div>
     </div>
   );
