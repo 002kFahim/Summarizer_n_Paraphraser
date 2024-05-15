@@ -4,10 +4,13 @@ import NavbarItem from "./NavbarItem";
 import { BsChevronDown } from "react-icons/bs";
 import AccountMenu from "./AccountMenu";
 import Link from "next/link";
+import useCurrentUser from "@/hooks/useCurrentUser";
 
 const TOP_OFFSET = 66;
 
 const Navbar = () => {
+  const { data: user } = useCurrentUser();
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
@@ -84,7 +87,11 @@ const Navbar = () => {
         >
           <div className="flex flex-row items-center gap-2 cursor-pointer relative">
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-              <img src="/images/profile.png" alt="" />
+              {user?.image ? (
+                <img src={user?.image} alt="" />
+              ) : (
+                <img src="/images/smiley.png" alt="" />
+              )}
             </div>
             <BsChevronDown
               className={`text-white transition ${
