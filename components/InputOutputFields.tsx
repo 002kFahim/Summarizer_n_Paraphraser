@@ -27,14 +27,14 @@ const InputOutputFields: React.FC<InputOutputFieldsProps> = ({
 
   return (
     <div className="mt-10 flex">
-      <div className="w-1/4" />
+      <div className="w-1/6" />
       {/* Input Field */}
-      <div className="w-1/4 pr-2">
+      <div className="w-2/6 pr-2">
         <textarea
           value={inputValue}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full h-48 px-4 py-2 border-2 border-gray-300 rounded-md resize-none"
+          className="w-full h-96 px-4 py-2 border-2 border-gray-300 rounded-md resize-none"
         />
         <div className="flex justify-end mt-2">
           <button
@@ -54,13 +54,13 @@ const InputOutputFields: React.FC<InputOutputFieldsProps> = ({
       {/* Divider Line */}
       <div className="w-px bg-gray-300" />
       {/* Output Field */}
-      <div className="w-1/4 pl-2">
-        <div className="bg-gray-100 rounded-lg p-4 h-48">
+      <div className="w-2/6 pl-2">
+        <div className="bg-gray-100 rounded-lg p-4 h-96">
           <span>Output:</span>
           <div className="overflow-y-auto max-h-full">{outputValue}</div>
         </div>
       </div>
-      <div className="w-1/4" />
+      <div className="w-1/6" />
     </div>
   );
 };
