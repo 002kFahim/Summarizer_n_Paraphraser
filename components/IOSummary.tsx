@@ -16,7 +16,7 @@ const IOSummary: React.FC<InputOutputFieldsProps> = ({ placeholder }) => {
 
   const handleSubmit = async () => {
     const openai = new OpenAI({
-      apiKey: "", // defaults to process.env
+      // apiKey: "", //should open after
       dangerouslyAllowBrowser: true,
     });
     const response = await openai.chat.completions.create({
