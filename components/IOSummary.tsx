@@ -1,26 +1,49 @@
 import React, { useState } from "react";
+import OpenAI from "openai";
 
 interface InputOutputFieldsProps {
   placeholder: string;
 }
 
-const InputOutputFields: React.FC<InputOutputFieldsProps> = ({
-  placeholder,
-}) => {
+const IOSummary: React.FC<InputOutputFieldsProps> = ({ placeholder }) => {
+  const [response, setResponse] = useState<any>("");
   const [inputValue, setInputValue] = useState("");
-  const [outputValue, setOutputValue] = useState("");
+  // const [outputValue, setOutputValue] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = () => {
-    setOutputValue(inputValue);
+  const handleSubmit = async () => {
+    const openai = new OpenAI({
+      apiKey: "sk-proj-Ru9AF2pQigjq2n4mc8FTT3BlbkFJAwcHLZ9IkTDSeylPIiiF", // defaults to process.env
+      dangerouslyAllowBrowser: true,
+    });
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: `You are a professional summarizer. You should summarize the text so that it looks perfect, brief and easy to understand`,
+        },
+        { role: "system", content: `` },
+
+        {
+          role: "user",
+          content: `following text is \n\n${inputValue}\n`,
+        },
+      ],
+      max_tokens: 160,
+    });
+
+    const summary = response.choices[0].message?.content;
+    console.log({ summary });
+    setResponse(summary);
   };
 
   const handleClear = () => {
     setInputValue("");
-    setOutputValue("");
+    setResponse("");
   };
 
   return (
@@ -51,8 +74,8 @@ const InputOutputFields: React.FC<InputOutputFieldsProps> = ({
         <div className="w-px bg-gray-300" />
         <div className="w-1/2 pl-2">
           <div className="bg-gray-100 rounded-lg p-4 h-96">
-            <span>Output:</span>
-            <div className="overflow-y-auto max-h-full">{outputValue}</div>
+            <h1 className="font-bold">Output</h1>
+            <div className="overflow-y-auto max-h-full">{response}</div>
           </div>
         </div>
       </div>
@@ -60,4 +83,4 @@ const InputOutputFields: React.FC<InputOutputFieldsProps> = ({
   );
 };
 
-export default InputOutputFields;
+export default IOSummary;

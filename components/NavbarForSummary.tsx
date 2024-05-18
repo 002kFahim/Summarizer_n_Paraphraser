@@ -35,13 +35,13 @@ const NavbarForSummary = () => {
     };
   }, []);
 
-  const toggleMobileMenu = useCallback(() => {
-    setShowMobileMenu((current) => !current);
-  }, []);
+  // const toggleMobileMenu = useCallback(() => {
+  //   setShowMobileMenu((current) => !current);
+  // }, []);
 
-  const toggleAccountMenu = useCallback(() => {
-    setShowAccountMenu((current) => !current);
-  }, []);
+  // const toggleAccountMenu = useCallback(() => {
+  //   setShowAccountMenu((current) => !current);
+  // }, []);
 
   return (
     // <nav className="w-full z-40">
@@ -117,7 +117,7 @@ const NavbarForSummary = () => {
             aria-hidden="true"
           />
         </DisclosureButton>
-        <div className="p-6 w-1/2 h-screen bg-zinc-800 z-20 fixed top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+        <div className="p-6 w-1/2 h-screen bg-zinc-700 z-20 fixed top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
           <div className="flex flex-col justify-start items-center">
             <h1 className="text-xl px-5 cursor-pointer font-bold text-white border-b border-gray-100 pb-4 w-full">
               <Link href="/">LearnIt</Link>

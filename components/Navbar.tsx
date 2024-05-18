@@ -35,13 +35,13 @@ const Navbar = () => {
     };
   }, []);
 
-  const toggleMobileMenu = useCallback(() => {
-    setShowMobileMenu((current) => !current);
-  }, []);
+  // const toggleMobileMenu = useCallback(() => {
+  //   setShowMobileMenu((current) => !current);
+  // }, []);
 
-  const toggleAccountMenu = useCallback(() => {
-    setShowAccountMenu((current) => !current);
-  }, []);
+  // const toggleAccountMenu = useCallback(() => {
+  //   setShowAccountMenu((current) => !current);
+  // }, []);
 
   return (
     // <nav className="w-full z-40">
@@ -143,7 +143,7 @@ const Navbar = () => {
             </div>
 
             <div className="my-4 border-gray-100 w-full absolute bottom-4">
-              <div className="flex justify-start items-center gap-4 px-5 p-2 rounded-md group m-auto transition">
+              <div className="flex justify-start items-center gap-4 px-5 p-2 group m-auto">
                 {user?.image ? (
                   <img className="w-8 rounded-md" src={user?.image} alt="" />
                 ) : (
