@@ -1,5 +1,6 @@
 import InputOutputFields from "@/components/InputOutputFields";
 import Navbar from "@/components/Navbar";
+import NavbarForParaphrase from "@/components/NavbarForParaphrase";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 
@@ -24,7 +25,7 @@ const Paraphrase = () => {
   return (
     <div>
       <div>
-        <Navbar />
+        <NavbarForParaphrase />
       </div>
       <div>
         <InputOutputFields placeholder="Enter your input here" />

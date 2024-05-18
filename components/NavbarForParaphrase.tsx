@@ -14,7 +14,7 @@ import { signOut } from "next-auth/react";
 
 const TOP_OFFSET = 66;
 
-const Navbar = () => {
+const NavbarForParaphrase = () => {
   const { data: user } = useCurrentUser();
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -132,9 +132,9 @@ const Navbar = () => {
                 </h3>
               </div>
 
-              <div className="flex mb-4 justify-start items-center gap-4 px-5 hover:bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
-                <PiClipboardText className="text-2xl text-white group-hover:text-black" />
-                <h3 className="text-base text-white group-hover:text-black font-semibold">
+              <div className="flex mb-4 justify-start items-center gap-4 px-5 bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
+                <PiClipboardText className="text-2xl text-black" />
+                <h3 className="text-base text-black font-semibold">
                   <Link href="/paraphrase">
                     <NavbarItem label="Paraphrase" />
                   </Link>
@@ -172,4 +172,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarForParaphrase;
