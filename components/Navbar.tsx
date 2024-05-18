@@ -10,6 +10,7 @@ import { Disclosure, DisclosureButton } from "@headlessui/react";
 import { LuScrollText } from "react-icons/lu";
 import { PiClipboardText } from "react-icons/pi";
 import { MdOutlineLogout } from "react-icons/md";
+import { FaQuestionCircle } from "react-icons/fa";
 import { signOut } from "next-auth/react";
 
 const TOP_OFFSET = 66;
@@ -137,6 +138,14 @@ const Navbar = () => {
                 <h3 className="text-base text-white group-hover:text-black font-semibold">
                   <Link href="/paraphrase">
                     <NavbarItem label="Paraphrase" />
+                  </Link>
+                </h3>
+              </div>
+              <div className="flex mb-4 justify-start items-center gap-4 px-5 hover:bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
+                <FaQuestionCircle className="text-2xl text-white group-hover:text-black" />
+                <h3 className="text-base text-white group-hover:text-black font-semibold">
+                  <Link href="/question">
+                    <NavbarItem label="QuestionGenerator" />
                   </Link>
                 </h3>
               </div>

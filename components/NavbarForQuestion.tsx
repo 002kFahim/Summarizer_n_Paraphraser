@@ -10,12 +10,12 @@ import { Disclosure, DisclosureButton } from "@headlessui/react";
 import { LuScrollText } from "react-icons/lu";
 import { PiClipboardText } from "react-icons/pi";
 import { MdOutlineLogout } from "react-icons/md";
-import { signOut } from "next-auth/react";
 import { FaQuestionCircle } from "react-icons/fa";
+import { signOut } from "next-auth/react";
 
 const TOP_OFFSET = 66;
 
-const NavbarForSummary = () => {
+const NavbarForQuestion = () => {
   const { data: user } = useCurrentUser();
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -124,9 +124,9 @@ const NavbarForSummary = () => {
               <Link href="/">LearnIt</Link>
             </h1>
             <div className="my-4 border-gray-100 pb-4">
-              <div className="flex mb-4 justify-start items-center gap-4 px-5 bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
-                <LuScrollText className="text-2xl text-black" />
-                <h3 className="text-base text-black font-semibold">
+              <div className="flex mb-4 justify-start items-center gap-4 px-5 hover:bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
+                <LuScrollText className="text-2xl text-white group-hover:text-black" />
+                <h3 className="text-base text-white group-hover:text-black font-semibold">
                   <Link href="/summary">
                     <NavbarItem label="Summary" />
                   </Link>
@@ -141,9 +141,9 @@ const NavbarForSummary = () => {
                   </Link>
                 </h3>
               </div>
-              <div className="flex mb-4 justify-start items-center gap-4 px-5 hover:bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
-                <FaQuestionCircle className="text-2xl text-white group-hover:text-black" />
-                <h3 className="text-base text-white group-hover:text-black font-semibold">
+              <div className="flex mb-4 justify-start items-center gap-4 px-5 bg-white p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto transition">
+                <FaQuestionCircle className="text-2xl text-black" />
+                <h3 className="text-base text-black font-semibold">
                   <Link href="/question">
                     <NavbarItem label="QuestionGenerator" />
                   </Link>
@@ -152,7 +152,7 @@ const NavbarForSummary = () => {
             </div>
 
             <div className="my-4 border-gray-100 w-full absolute bottom-4">
-              <div className="flex justify-start items-center gap-4 px-5 p-2 rounded-md group m-auto transition">
+              <div className="flex justify-start items-center gap-4 px-5 p-2 group m-auto">
                 {user?.image ? (
                   <img className="w-8 rounded-md" src={user?.image} alt="" />
                 ) : (
@@ -181,4 +181,4 @@ const NavbarForSummary = () => {
   );
 };
 
-export default NavbarForSummary;
+export default NavbarForQuestion;
