@@ -18,7 +18,7 @@ const IOParaphrase: React.FC<InputOutputFieldsProps> = ({ placeholder }) => {
 
   const handleSubmit = async () => {
     const openai = new OpenAI({
-      // apiKey: "", //should open after
+      apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, //should open after
       dangerouslyAllowBrowser: true,
     });
     const response = await openai.chat.completions.create({
@@ -76,7 +76,7 @@ const IOParaphrase: React.FC<InputOutputFieldsProps> = ({ placeholder }) => {
         <div className="w-px bg-gray-300" />
         <div className="w-1/2 pl-2">
           <div className="bg-gray-100 rounded-lg p-4 h-96">
-            Output
+            <h1 className="font-bold">Output</h1>
             <div className="overflow-y-auto max-h-full">{response}</div>
           </div>
         </div>
