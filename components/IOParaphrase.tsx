@@ -16,7 +16,7 @@ const IOParaphrase: React.FC<InputOutputFieldsProps> = ({ placeholder }) => {
 
   const handleSubmit = async () => {
     const openai = new OpenAI({
-      apiKey: "sk-proj-Ru9AF2pQigjq2n4mc8FTT3BlbkFJAwcHLZ9IkTDSeylPIiiF", // defaults to process.env
+      apiKey: "", // defaults to process.env
       dangerouslyAllowBrowser: true,
     });
     const response = await openai.chat.completions.create({
