@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import OpenAI from "openai";
 
+//no key now
+
 interface InputOutputFieldsProps {
   placeholder: string;
 }
